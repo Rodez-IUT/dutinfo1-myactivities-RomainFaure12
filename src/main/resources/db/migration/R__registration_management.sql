@@ -70,3 +70,7 @@ $action_log$ language plpgsql;
 CREATE TRIGGER trigger_log_delete_action
     AFTER DELETE ON registration
     FOR EACH ROW EXECUTE PROCEDURE trigger_log_delete_action();
+    
+CREATE OR REPLACE FUNCTION add_activity(in_title bigInt, in_description bigInt, in_owner_id bigInt) RETURNS void as $$
+	--
+$$ language plpgsql;
